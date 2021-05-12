@@ -95,7 +95,7 @@ function kw_completion(doc, spartial, CIs, offset)
     length(spartial) == 0 && return
     for (kw, comp) in snippet_completions
         if startswith(kw, spartial)
-             t1 = TextEdit(Range(doc, (offset - sizeof(spartial)):offset), comp)
+            t1 = TextEdit(Range(doc, (offset - sizeof(spartial)):offset), comp)
             push!(CIs, CompletionItem(kw, 14, missing, missing, kw, missing, missing, missing, missing, missing, InsertTextFormats.Snippet, t1, missing, missing, missing, missing))
         end
     end
